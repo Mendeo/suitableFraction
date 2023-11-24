@@ -9,9 +9,12 @@ const data = fs.readFileSync(input).toString().split('\n').filter(value => !(val
 	return intValue;
 }));
 
-const sf = getSF(data);
-console.log(sf);
-console.log(sf[0] / sf[1]);
+for (let i = 0; i < data.length; i++)
+{
+	const arr = data.slice(0, i + 1);
+	const sf = getSF(arr);
+	console.log(`${i + 1}: ${sf[0]} / ${sf[1]}, ${sf[0] / sf[1]}`);
+}
 
 function getSF(data)
 {
